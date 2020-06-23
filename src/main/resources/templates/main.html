@@ -1,31 +1,19 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="Главная страницы"></title>
+    <title>Главная страница</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
+
 <body>
-<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 th:text="Главная страница" class="my-0 mr-md-auto font-weight-normal"></h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Главная</a>
-        <a class="p-2 text-dark" href="#">Блог</a>
-        <a class="p-2 text-dark" href="#">О нас</a>
-    </nav>
-</header>
 
+<header th:insert="fragments/header :: header"></header>
 
-<footer class="text-muted">
-    <div class="container">
-        <p class="float-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
-    </div>
-</footer>
+<!--Сдесь контент-->
+
+<footer th:insert="fragments/footer :: footer"></footer>
 
 </body>
+
 </html>
