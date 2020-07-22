@@ -11,9 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 public class MainController {
 
     @GetMapping
-    public String main(Model model, HttpServletRequest request)
+    public String main(Model model, HttpServletRequest r)
     {
-        model.addAttribute("address", request.getRemoteAddr());
+        model.addAttribute("address",  String.format("remote addr %s, port %d, user %s, host %s\n"
+                        + "local addr %s, port %d, name %s",
+                r.getRemoteAddr(), r.getRemotePort(), r.getRemoteUser(), r.getRemoteHost(),
+                r.getLocalAddr(), r.getLocalPort(), r.getLocalName()));
         return "main";
     }
 }
