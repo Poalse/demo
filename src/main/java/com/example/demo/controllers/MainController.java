@@ -3,10 +3,7 @@ package com.example.demo.controllers;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +43,7 @@ public class MainController {
         return "requests";
     }
 
-    @GetMapping("/request/{data}")
+    @RequestMapping("/{data}")
     public String request(Model model, @PathVariable String data) {
         model.addAttribute("type", "Не наш запрос");
         model.addAttribute("request", data);
