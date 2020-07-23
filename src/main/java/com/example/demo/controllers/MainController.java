@@ -34,23 +34,22 @@ public class MainController {
 
     @GetMapping("/subscribe")
     public String subscribe(Model model) {
-        model.addAttribute("request", "subscribe");
         model.addAttribute("type", "Наш запрос");
+        model.addAttribute("request", "subscribe");
         return "requests";
     }
 
     @GetMapping("/unsubscribe")
     public String unsubscribe(Model model) {
-        model.addAttribute("request", "unsubscribe");
         model.addAttribute("type", "Наш запрос");
+        model.addAttribute("request", "unsubscribe");
         return "requests";
     }
 
     @GetMapping("/request/{data}")
     public String request(Model model, @PathVariable String data) {
-        model.addAttribute("request", data);
         model.addAttribute("type", "Не наш запрос");
+        model.addAttribute("request", data);
         return "requests";
     }
-
 }
