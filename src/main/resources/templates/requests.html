@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<header th:insert="fragments/header :: header"></header>
+
+<h6 class="container" th:text="${type}"></h6>
+<div class="container" th:text="${request}"></div>
+
+<footer th:insert="fragments/footer :: footer"></footer>
+
+</body>
+
+</html>
