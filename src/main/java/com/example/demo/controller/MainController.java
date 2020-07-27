@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
 
 @Controller
 public class MainController {
@@ -19,4 +21,10 @@ public class MainController {
 //                r.getLocalAddr(), r.getLocalPort(), r.getLocalName()));
         return "main";
     }
+
+    @GetMapping("get_user")
+    public @ResponseBody User getUser() {
+        return new User("Alex", UUID.randomUUID().toString());
+    }
+
 }
